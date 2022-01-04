@@ -59,7 +59,7 @@ app.layout = html.Div(children=[
             html.H1('second'),
             dcc.Graph(
                 id='example-graph2',
-                figure=fig2
+                figure=fig
             ),
 
         ], style={'width': '35%','display': 'inline-block', 'vertical-align': 'top','horizontal-align': 'center', 'margin-left': '1vw', 'margin-top': '3vw'})
@@ -81,8 +81,12 @@ app.layout = html.Div(children=[
     ]),
     #third row
     html.Div(children=[
-        html.H1('gesamte Breite')
-        ], style={'display': 'inline-block', 'vertical-align': 'top', 'margin-left': '3vw', 'margin-top': '3vw'})
+        html.H1('gesamte Breite'),
+        dcc.Graph(
+            id='example-graph3',
+            figure=fig2
+            ),
+        ], style={'display': 'block', 'vertical-align': 'top', 'margin-left': '3vw', 'margin-top': '3vw'})
     
 
 ])

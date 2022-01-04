@@ -41,59 +41,52 @@ fig2.update_layout(
     font_color=colors['text']
 )
 
-app.layout = html.Div(
-    [
-    html.Div(
-        style={'backgroundColor': colors['background']}, 
-        children=[
-        html.H1(
-            children='Hello Dash!', 
-            style= {
-                'textAlign':'center',
-                'color':colors['text'],
-                }
-            ),
-        html.Div(
-            children='A web application framework for your data ',
-            style={
-                'textAlign':'center',
-                'color':colors['text']
-                },        
-            ),
-        dcc.Graph(
-            id='example-graph',
-            figure=fig
-            ),
-        dcc.Graph(
-            id='example-graph3',
-            figure=fig
+
+app.layout = html.Div(children=[
+    #first row
+    html.Div(children=[
+        #fisrt col in first row
+        html.Div(children=[
+            html.H1('first Graph'),
+            dcc.Graph(
+                id='example-graph',
+                figure=fig
+            )
+
+        ], style={'width': '35%','display': 'inline-block', 'vertical-align': 'top', 'margin-left': '3vw', 'margin-top': '3vw'}),
+        #sec col in first row
+        html.Div(children=[
+            html.H1('second'),
+            dcc.Graph(
+                id='example-graph2',
+                figure=fig2
             ),
 
-        ]),
-    html.Div(
-        style={'backgroundColor': colors['background']}, 
-        children=[
-        html.H1(
-            children='Hello Dash!', 
-            style= {
-                'textAlign':'center',
-                'color':colors['text'],
-                }
-            ),
-        html.Div(
-            children='A web application framework for your data ',
-            style={
-                'textAlign':'center',
-                'color':colors['text']
-                },        
-            ),
-        dcc.Graph(
-            id='example-graph2 ',
-            figure=fig2
-            )
-        ]),
+        ], style={'width': '35%','display': 'inline-block', 'vertical-align': 'top','horizontal-align': 'center', 'margin-left': '1vw', 'margin-top': '3vw'})
         
-], style=({'width': '70%', 'display': 'inline-block', 'vertical-align': 'right'}))
+    ]),
+    # sec row
+        html.Div(children=[
+        #fisrt col in sec row
+        html.Div(children=[
+            html.H1('first')
+
+        ], style={'display': 'inline-block', 'vertical-align': 'top', 'horizontal-align': 'center', 'margin-left': '3vw', 'margin-top': '3vw'}),
+        #sec col in sec row
+        html.Div(children=[
+            html.H1('scound')
+
+        ], style={'display': 'inline-block', 'vertical-align': 'top', 'margin-left': '3vw', 'margin-top': '3vw'})
+        
+    ]),
+    #third row
+    html.Div(children=[
+        html.H1('gesamte Breite')
+        ], style={'display': 'inline-block', 'vertical-align': 'top', 'margin-left': '3vw', 'margin-top': '3vw'})
+    
+
+])
+
 
 
 

@@ -14,12 +14,12 @@ df = px.data.stocks()
 app.layout = html.Div(id = 'parent', children = [
     html.H1(id = 'H1', children = 'Styling using html components', style = {'textAlign':'center',\
                                             'marginTop':40,'marginBottom':40}),
-
         dcc.Dropdown( id = 'dropdown',
         options = [
             {'label':'Google', 'value':'GOOG' },
             {'label': 'Apple', 'value':'AAPL'},
             {'label': 'Amazon', 'value':'AMZN'},
+            {'label': 'Advanced Micro Devices', 'value':'AMD'},
             ],
         value = 'GOOG'),
         dcc.Graph(id = 'bar_plot')
